@@ -8,7 +8,7 @@
 
 - [X] Have the developer environment set up with the Webpack dev server
 
-- [ ] Have a minimum of one form field
+- [x] Have a minimum of one form field
 
 - [X] Make one request to the Aylien API
 

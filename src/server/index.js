@@ -43,7 +43,8 @@ app.post('/post', (req, res) => {
     }, function(error, response) {
         if (error === null) {
             console.log(response);
-            res.send(response);
+            res.json(response);
+            res.end();
         } else {
             console.log('This is not a valid text or article to evaluate. Try again.')
         }
