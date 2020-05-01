@@ -1,5 +1,3 @@
-let data = {};
-
 // Dotenv
 const dotenv = require('dotenv');
 dotenv.config();
@@ -38,17 +36,16 @@ app.listen(8080, function () {
 
 app.post('/post', (req, res) => {
     console.log('I got a request.')
-    data = req.body;
+    const data = req.body;
     console.log(data);
     textapi.classify({
         url: data.text
     }, function(error, response) {
         if (error === null) {
             console.log(response);
-            data = response;
+            res.send(response);
         } else {
             console.log('This is not a valid text or article to evaluate. Try again.')
         }
     });
-    res.send(data);
 });

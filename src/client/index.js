@@ -25,6 +25,5 @@ async function postData (url, data) {
 
 formBox.addEventListener('submit', () => {
     data.text = document.getElementById('textBox').value;
-    console.log(data);
     postData('/post', data);
 });
