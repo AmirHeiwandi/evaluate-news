@@ -2,9 +2,9 @@
 
 ### Your project must:
 
-- [X] Be set up with Webpack, Express, Node, and Sass, and Service Workers
+- [X(Service kvar)] Be set up with Webpack, Express, Node, and Sass, and Service Workers
 
-- [X] Have separate dev and prod configurations for Webpack
+- [X(Fråga varför dev inte funkar mot server)] Have separate dev and prod configurations for Webpack
 
 - [X] Have the developer environment set up with the Webpack dev server
 
@@ -16,7 +16,7 @@
 
 - [X] Minify js and styles in the production environment
 
-- [ ] Response from the API must be added to the view for a user to see 
+- [X] Response from the API must be added to the view for a user to see 
 
 - [ ] Be able to show content offline
 

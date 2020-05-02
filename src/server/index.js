@@ -35,9 +35,9 @@ app.listen(8080, function () {
 })
 
 app.post('/post', (req, res) => {
-    console.log('I got a request.')
+    //console.log('I got a request.') Used for control
     const data = req.body;
-    console.log(data);
+    //console.log(data); Used for control
     textapi.classify({
         url: data.text
     }, function(error, response) {
@@ -47,6 +47,7 @@ app.post('/post', (req, res) => {
             res.end();
         } else {
             console.log('This is not a valid text or article to evaluate. Try again.')
+            
         }
     });
 });
