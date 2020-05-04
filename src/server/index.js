@@ -25,11 +25,6 @@ const textapi = new aylien({
     application_key: process.env.API_KEY
 });
 
-/*app.get('/', function (req, res) {
-    // res.sendFile('dist/index.html')
-    res.sendFile(path.resolve('src/client/views/index.html'))
-})*/
-
 app.listen(8080, function () {
     console.log('Server listening on port 8080!')
 })
@@ -38,8 +33,8 @@ app.post('/post', (req, res) => {
     //console.log('I got a request.') Used for control
     const data = req.body;
     //console.log(data); Used for control
-    textapi.classify({
-        url: data.text
+    textapi.hashtags({
+        url: data.text,
     }, function(error, response) {
         if (error === null) {
             console.log(response);
@@ -47,7 +42,8 @@ app.post('/post', (req, res) => {
             res.end();
         } else {
             console.log('This is not a valid text or article to evaluate. Try again.')
-            
+            res.json('error');
+            res.end();
         }
     });
 });
