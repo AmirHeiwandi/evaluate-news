@@ -2,9 +2,6 @@
 const dotenv = require('dotenv');
 dotenv.config();
 
-// Path
-var path = require('path')
-
 // Express
 const express = require('express')
 const app = express()
@@ -42,7 +39,7 @@ app.post('/post', (req, res) => {
             res.end();
         } else {
             console.log('This is not a valid text or article to evaluate. Try again.')
-            res.json('error');
+            res.json('error'); //This is incase regex URL validation is not working.
             res.end();
         }
     });

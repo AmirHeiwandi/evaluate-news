@@ -1,5 +1,6 @@
-import splitObject from './index.js'
+import {splitObject} from './splitObject.js'
 
+// Create array to use when testing function
 let list = {
     text: `McFoible sang happily to himself. The sun was shining.`,
     language: 'en',
@@ -14,7 +15,7 @@ let list = {
 }
 
 test('Properly split the object', () => {
-    expect(splitObject(list).toEqual([
+    expect(splitObject(list)).toEqual([
         `McFoible sang happily to himself. The su...`,
         'en',
         [
@@ -22,8 +23,7 @@ test('Properly split the object', () => {
             'second',
             'third',
             'fourth',
-            'fifth',
-            'sixth'
+            'fifth'
         ]
-    ]))
+    ])
 })

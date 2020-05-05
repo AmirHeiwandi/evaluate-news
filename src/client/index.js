@@ -1,26 +1,16 @@
 // Import statements
-import '../styles/base.scss'
-import '../styles/footer.scss'
-import '../styles/form.scss'
-import '../styles/header.scss'
+import './styles/base.scss'
+import './styles/footer.scss'
+import './styles/form.scss'
+import './styles/header.scss'
+import { splitObject } from './js/splitObject.js'
+import { isURL } from './js/isURL.js'
+
 
 // Variable declarations
-let formBox = document.getElementById('formBox');
+let form = document.getElementById('formBox');
+let textBox = document.getElementById('textBox');
 let data = {};
-
-// Split the object
-function splitObject (info) {
-    if (info === 'error'){
-        return 'error';
-    }
-    else {
-        let list = [];
-        list[0] = `${info.text.slice(0, 40)}...`;
-        list[1] = info.language;
-        list[2] = info.hashtags.slice(0,5);
-        return list;
-    }
-}
 
 // POST to server
 async function postData (url, data) {
@@ -39,6 +29,7 @@ async function postData (url, data) {
 // Update the UI based on the article.
 function updateUI(info){
     let list = splitObject(info);
+    // This is incase regex URL validation is not working.
     if (list === 'error'){
         alert('URL provided not acceptable. Try another one.');
         return null;
@@ -61,11 +52,16 @@ function updateUI(info){
 }
 
 // Eventlistener for the submit form-button
-formBox.addEventListener('submit', (e) => {
+form.addEventListener('submit', (e) => {
     e.preventDefault();
-    data.text = document.getElementById('textBox').value;
-    postData('/post', data).then(function (json){
-        updateUI(json);
-    })
-    document.getElementById('textBox').value = '';
+    data.text = textBox.value;
+    if (isURL(data.text) === true) {
+        postData('/post', data).then(function (json){
+            updateUI(json);
+        })
+        textBox.value = '';
+    } else {
+        textBox.value = '';
+        alert('URL provided not acceptable. Try another one.');
+    }
 });

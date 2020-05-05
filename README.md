@@ -3,7 +3,7 @@
 ## Overview
 Fourth project in the Udacity Nanodegree Program "Front End Developer".
 
-## Instructions
+## Project Requirements/Tasks
 Purpose of this project was to get more experience of working with buildtools (Webpack), node.js and API's. In this project we are supposed to work with webpack when we create a website that uses the Aylien API. The criteria was:
 
 1. Be set up with Webpack, Express, Node, and Sass, and Service Workers
@@ -26,11 +26,13 @@ Purpose of this project was to get more experience of working with buildtools (W
 
 ## Instructions
 
-1. Start the server by running the command 'npm run start' in the terminal. You need to be in the project folder.
+1. Locate yourself to the root project folder and install all the dependencies by using 'npm install'
 
-2. Go to website localhost:8080.
+2. Start the server by running the command 'npm run start' in the terminal.
 
-3. Paste in the article of your choice in the form and press submit, and you'll see the response from the API being viewed.
+3. Go to website localhost:8080.
+
+4. Paste in the article of your choice in the form and press submit, and you'll see the response from the API being viewed.
 
 Note: Purpose of this project was mostly to work on new achievied node.js, API and build-tools skills, and not css and javascript. Therefore not much time was put into styling.
 
