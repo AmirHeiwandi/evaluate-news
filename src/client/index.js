@@ -6,7 +6,6 @@ import './styles/header.scss'
 import { splitObject } from './js/splitObject.js'
 import { isURL } from './js/isURL.js'
 
-
 // Variable declarations
 let form = document.getElementById('formBox');
 let textBox = document.getElementById('textBox');
@@ -39,12 +38,12 @@ function updateUI(info){
         let textElement = document.createElement('p');
         textElement.innerHTML = `<span>Text:</span> ${list[0]}`;
         section.appendChild(textElement);
-        let langElement = document.createElement('p');
-        langElement.innerHTML = `<span>Language:</span> ${list[1]}`;
-        section.appendChild(langElement);
-        let hashtagsElement = document.createElement('p');
-        hashtagsElement.innerHTML = `<span>Top 5 Hashtags:</span> ${list[2]}`;
-        section.appendChild(hashtagsElement);
+        let polarElement = document.createElement('p');
+        polarElement.innerHTML = `<span>Polarity:</span> ${list[1]}`;
+        section.appendChild(polarElement);
+        let subjElement = document.createElement('p');
+        subjElement.innerHTML = `<span>Subjectivity:</span> ${list[2]}`;
+        section.appendChild(subjElement);
         let footer = document.getElementById('footer');
         let body = document.getElementsByTagName("BODY")[0];
         body.insertBefore(section, footer);

@@ -22,16 +22,17 @@ const textapi = new aylien({
     application_key: process.env.API_KEY
 });
 
-app.listen(8080, function () {
-    console.log('Server listening on port 8080!')
+app.listen(8082, function () {
+    console.log('Server listening on port 8082!')
 })
 
 app.post('/post', (req, res) => {
     //console.log('I got a request.') Used for control
     const data = req.body;
     //console.log(data); Used for control
-    textapi.hashtags({
+    textapi.sentiment({
         url: data.text,
+        mode: 'document'
     }, function(error, response) {
         if (error === null) {
             console.log(response);

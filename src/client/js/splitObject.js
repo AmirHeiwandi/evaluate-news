@@ -6,8 +6,8 @@ function splitObject (info) {
     else {
         let list = [];
         list[0] = `${info.text.slice(0, 40)}...`;
-        list[1] = info.language;
-        list[2] = info.hashtags.slice(0,5);
+        list[1] = info.polarity;
+        list[2] = info.subjectivity;
         return list;
     }
 }
