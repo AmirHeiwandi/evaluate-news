@@ -34,7 +34,13 @@ function updateUI(info){
         return null;
     }
     else {
+        // Remove latest post
+        let sectionCollection = document.getElementsByClassName('remover');
+        if (sectionCollection.length > 0) {
+            sectionCollection[0].remove();
+        }
         let section = document.createElement('section');
+        section.classList.add('remover');
         let textElement = document.createElement('p');
         textElement.innerHTML = `<span>Text:</span> ${list[0]}`;
         section.appendChild(textElement);
@@ -55,7 +61,7 @@ form.addEventListener('submit', (e) => {
     e.preventDefault();
     data.text = textBox.value;
     if (isURL(data.text) === true) {
-        postData('/post', data).then(function (json){
+        postData('http://localhost:8082/post', data).then(function (json){
             updateUI(json);
         })
         textBox.value = '';

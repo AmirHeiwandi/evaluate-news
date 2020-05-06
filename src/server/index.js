@@ -15,6 +15,11 @@ const bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+// Define cors
+const cors = require('cors'); 
+
+app.use(cors());
+
 // Alyien API
 const aylien = require("aylien_textapi");
 const textapi = new aylien({
